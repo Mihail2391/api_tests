@@ -48,7 +48,6 @@ class TestUser:
     @allure.story("GET user after delete")
     @allure.severity(allure.severity_level.MINOR)
     def test_get_user_after_delete(self):
-        # доп. тест, чтобы стало 9+ и был полноценный сценарий
         requests.delete(f"{BASE_URL}/user/test1")
         r = requests.get(f"{BASE_URL}/user/test1")
         assert r.status_code in (200, 404)
